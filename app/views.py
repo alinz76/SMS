@@ -20,7 +20,7 @@ def home_page(request):
         headers = { 'Authorization' : 'Basic %s' %  userAndPass , 'Content-type': 'application/json' , 'encoding':'utf-8'}
         link = f'{url}AccessHash={request.POST.get('access_hash')}&PhoneNumber={request.POST.get('phone_number')}&PatternId={request.POST.get("pattern_id")}&RecNumber={request.POST.get("rec_number")}&SmsClass={request.POST.get("sms_class")}'
         print(link)
-        data = requests.post(link, headers=headers)
+        data = requests.get(link, headers=headers)
         response = data.text
         print(response)
         return render(request, 'app/homepage.html', context=context)

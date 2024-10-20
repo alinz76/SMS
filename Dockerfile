@@ -19,8 +19,8 @@ ENV PORT=8000
 WORKDIR /app
 
 COPY --from=builder /app/venv venv
-COPY example_django example_django
+COPY SMS SMS
 
 EXPOSE ${PORT}
 
-CMD gunicorn --bind :${PORT} --workers 2 example_django.wsgi
+CMD gunicorn --bind :${PORT} --workers 2 SMS.wsgi

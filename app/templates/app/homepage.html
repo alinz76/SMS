@@ -12,15 +12,22 @@
 </head>
 <body style="
     background: rgb(207,224,255);
-    background: linear-gradient(180deg, rgb(127, 171, 252) 0%, rgba(41,193,66,1) 100%);
-    
-">
+    background: linear-gradient(180deg, rgb(127, 171, 252) 0%, rgba(41,193,66,1) 100%);">
+
     <h1 style="margin: 10px;">SMS Services API</h1>
-    
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form style="opacity: 0.9; margin: 10px; width: 70%;" id="urlForm" method="post" action="">
         {% csrf_token %}
         {{ sms_form|crispy }}
-        <button class="btn btn-primary mx-1" type="submit">submit</button>
+        <button class="btn btn-primary mx-1" type="submit">ارسال</button>
         <p id="generatedUrl"></p>
     </form>
     

@@ -18,7 +18,7 @@ def home_page(request):
         bytestr = bytes(idendity, encoding="ascii")
         userAndPass = b64encode(bytestr).decode("ascii")
         headers = { 'Authorization' : 'Basic %s' %  userAndPass , 'Content-type': 'application/json' , 'encoding':'utf-8'}
-        link = f'{url}AccessHash={request.POST.get('access_hash').strip()}&PhoneNumber={request.POST.get('phone_number')}&PatternId={request.POST.get("pattern_id").strip()}&RecNumber={request.POST.get("rec_number")}&SmsClass={request.POST.get("sms_class")}&token1={request.POST.get("token1")}'
+        link = f'{url}AccessHash={request.POST.get('access_hash').strip()}&PhoneNumber={request.POST.get('phone_number')}&PatternId={request.POST.get("pattern_id").strip()}&RecNumber={request.POST.get("rec_number")}&SmsClass={request.POST.get("sms_class")}&token1={request.POST.get("token1")}&token2={request.POST.get('token2')}&token3={request.POST.get('token3')}&token4={request.POST.get('token4')}&token5={request.POST.get('token5')}&token6={request.POST.get('token6')}&token7={request.POST.get('token7')}&token8={request.POST.get('token8')}&token9={request.POST.get('token9')}'
         print(link)
         data = requests.get(link, headers=headers)
         response = data.text

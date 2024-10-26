@@ -1,9 +1,9 @@
 from django import forms
 
 
-class SMSForm(forms.Form):
-    username = forms.CharField(max_length=100)
-    password = forms.CharField(max_length=100)
+class SendPatternWithUrl(forms.Form):
+    # username = forms.CharField(max_length=100)
+    # password = forms.CharField(max_length=100)
     access_hash = forms.CharField(max_length=100)
     phone_number = forms.IntegerField()
     pattern_id = forms.CharField(max_length=100)
@@ -18,3 +18,51 @@ class SMSForm(forms.Form):
     token7 = forms.CharField(max_length=100, required=False)
     token8 = forms.CharField(max_length=100, required=False)
     token9 = forms.CharField(max_length=100, required=False)
+
+class SendPatternCodeWithUrl(forms.Form):
+    access_hash = forms.CharField(max_length=100)
+    mobile = forms.IntegerField()
+    pattern_id = forms.CharField(max_length=100)
+    token1 = forms.CharField(max_length=100, required=False)
+    token2 = forms.CharField(max_length=100, required=False)
+    token3 = forms.CharField(max_length=100, required=False)
+    token4 = forms.CharField(max_length=100, required=False)
+    token5 = forms.CharField(max_length=100, required=False)
+    token6 = forms.CharField(max_length=100, required=False)
+    token7 = forms.CharField(max_length=100, required=False)
+    token8 = forms.CharField(max_length=100, required=False)
+    token9 = forms.CharField(max_length=100, required=False)
+
+class SendPatternWithPost(forms.Form):
+    access_hash = forms.CharField(max_length=100)
+    phone_number = forms.IntegerField()
+    rec_number = forms.CharField(max_length=100)
+    sms_class = forms.IntegerField()
+    pattern_id = forms.CharField(max_length=100)
+    token1 = forms.CharField(max_length=100, required=False)
+    token2 = forms.CharField(max_length=100, required=False)
+    token3 = forms.CharField(max_length=100, required=False)
+    token4 = forms.CharField(max_length=100, required=False)
+    token5 = forms.CharField(max_length=100, required=False)
+    token6 = forms.CharField(max_length=100, required=False)
+    token7 = forms.CharField(max_length=100, required=False)
+    token8 = forms.CharField(max_length=100, required=False)
+    token9 = forms.CharField(max_length=100, required=False)
+
+class SendGroupSms(forms.Form):
+    access_hash = forms.CharField(max_length=100)
+    phone_number = forms.IntegerField()
+    pattern_id = forms.CharField(max_length=100)
+    mobiles = forms.CharField(widget=forms.Textarea, label='Enter Mobiles (one per line)')
+    user_group_id = forms.CharField()
+    senddateintimestamp = forms.DateTimeField(label='Date', widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
+    token1 = forms.CharField(max_length=100, required=False)
+    token2 = forms.CharField(max_length=100, required=False)
+    token3 = forms.CharField(max_length=100, required=False)
+    token4 = forms.CharField(max_length=100, required=False)
+    token5 = forms.CharField(max_length=100, required=False)
+    token6 = forms.CharField(max_length=100, required=False)
+    token7 = forms.CharField(max_length=100, required=False)
+    token8 = forms.CharField(max_length=100, required=False)
+    token9 = forms.CharField(max_length=100, required=False)
+    

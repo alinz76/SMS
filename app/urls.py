@@ -3,5 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.home_page, name='home'),
-    # path('send_sms/', views.SendPatternWithUrlView.as_view(), name='send-sms'),
+    path('sendpatternwithurl/', views.SendPatternWithUrl, name='send-pattern'),
+    path('sendpatterncodewithurl/', views.SendPatternCodeWithUrl, name='send-pattern-code'),
+    path('sendpatternwithpost/', views.SendPatternWithPost, name='send-pattern-post'),
+    path('sendgroupsms/', views.SendGroupSms, name='send-group-sms'),
 ]
